@@ -32,7 +32,6 @@ on:
       appName:
         description: 'Application name:'
         required: true
-        default: ${{ env.application_name }}
       emptyBucket:
         description: 'Empty S3 bucket:'     
         required: true
@@ -63,7 +62,7 @@ jobs:
         with:
           sharedScript: empty-bucket
           env: ${{ github.event.inputs.setEnvironment}}
-          application-name: ${{ github.event.inputs.appName }}
+          application-name: ${{ env.application_name }}
   
   ci:
     if: ${{ github.event.inputs.emptyBucket == 'false'}} 
