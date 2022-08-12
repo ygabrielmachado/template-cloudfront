@@ -1,10 +1,6 @@
 
 name: CI
 
-env:
-  HEALTHCHECK_DEV: template-cloudfront.dev.cloud.dex.co
-  application_name: "template-cloudfront"
-
 on:
   workflow_dispatch:
     inputs:
@@ -33,6 +29,10 @@ on:
         options:
         - false
         - true
+
+env:
+  HEALTHCHECK_DEV: template-cloudfront.dev.cloud.dex.co
+  application_name: "template-cloudfront"
 
 jobs:
   emptyBucket:
