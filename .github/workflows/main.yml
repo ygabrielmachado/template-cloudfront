@@ -6,10 +6,6 @@ env:
   application_name: "template-cloudfront"
 
 on:
-  push:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       setRegion:
