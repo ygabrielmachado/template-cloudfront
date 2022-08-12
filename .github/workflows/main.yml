@@ -75,14 +75,14 @@ jobs:
         run:  ./scripts/build-app.sh ${{ github.event.inputs.setEnvironment}}
 
       - name: Deploy Action
-        uses: ygabrielmachado/shared-actions
+        uses: ygabrielmachado/shared-actions@v1
         with:
           sharedScript: deploy-cloudfront
           env: ${{ github.event.inputs.setEnvironment}}
           application-name: ${{ github.event.inputs.appName }}
       
       - name: HealthCheck
-        uses: ygabrielmachado/shared-actions
+        uses: ygabrielmachado/shared-actions@v1
         with:
           sharedScript: healthcheck
           env: ${{ github.event.inputs.setEnvironment}}
